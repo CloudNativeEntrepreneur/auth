@@ -6,5 +6,5 @@ spec:
   url: https://jx-keycloak-http.{{ .Release.Namespace }}.svc.cluster.local
   realm: master
   clientId: admin-cli
-  username: admin
-  passwordSecretName: jx-keycloak-http
+  username: {{ required "keycloakAdminUser is required." .Values.keycloakAdminUser }}
+  passwordSecretName: auth-keycloak

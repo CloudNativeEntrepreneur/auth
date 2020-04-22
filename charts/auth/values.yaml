@@ -8,4 +8,6 @@ keycloak:
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
 
 postgresAdminPassword:
+postgresAdminUser:
 keycloakAdminPassword:
+keycloakAdminUser:
