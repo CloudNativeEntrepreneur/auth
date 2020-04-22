@@ -1,13 +1,10 @@
-apiVersion: keycloak.org/v1alpha1
+apiVersion: k8s.kiwigrid.com/v1beta1
 kind: Keycloak
 metadata:
-  name: example-keycloak
-  labels:
-    app: sso
+  name: sso
 spec:
-  instances: 1
-  extensions:
-    - >-
-      https://github.com/aerogear/keycloak-metrics-spi/releases/download/1.0.4/keycloak-metrics-spi-1.0.4.jar
-  externalAccess:
-    enabled: true
+  url: https://jx-keycloak-http.{{ .Release.Namespace }}.svc.cluster.local
+  realm: master
+  clientId: admin-cli
+  username: admin
+  passwordSecretName: jx-keycloak-http
