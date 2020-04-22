@@ -1,5 +1,7 @@
 keycloak:
   keycloak:
+    persistence:
+      deployPostgres: true
     service:
       annotations:
         fabric8.io/expose: "true"
