@@ -2,7 +2,6 @@ keycloak:
   keycloak:
     persistence:
       dbVendor: 'postgres'
-      deployPostgres: true
     service:
       annotations:
         fabric8.io/expose: "true"
