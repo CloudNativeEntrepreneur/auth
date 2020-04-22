@@ -6,3 +6,6 @@ keycloak:
       annotations:
         fabric8.io/expose: "true"
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
+
+postgresAdminPassword:
+keycloakAdminPassword:
