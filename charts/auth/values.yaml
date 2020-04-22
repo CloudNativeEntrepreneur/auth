@@ -1,6 +1,7 @@
 keycloak:
   keycloak:
     persistence:
+      dbVendor: 'postgres'
       deployPostgres: true
     service:
       annotations:
