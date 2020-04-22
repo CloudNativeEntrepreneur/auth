@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir keycloak-controller
 curl -L https://github.com/kiwigrid/keycloak-controller/tarball/2.0.0 | tar xz -C keycloak-controller --strip-components=1
 cd keycloak-controller/src/main/k8s
