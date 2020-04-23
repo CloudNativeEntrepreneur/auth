@@ -3,9 +3,10 @@ kind: Keycloak
 metadata:
   name: sso
 spec:
-  url: http://jx-keycloak-http.{{ .Release.Namespace }}.svc.cluster.local
+  url: http://jx-keycloak-http.{{ .Release.Namespace }}.svc.cluster.local/auth
   realm: master
   clientId: admin-cli
   username: {{ required "keycloakAdminUsername is required." .Values.keycloakAdminUsername }}
+  passwordSecretNamespace: {{ .Release.Namespace }}
   passwordSecretName: auth-keycloak
   passwordSecretKey: adminPassword
