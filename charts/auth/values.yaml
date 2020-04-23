@@ -1,12 +1,36 @@
 keycloak:
   keycloak:
+    extraInitContainers: |
+      - name: extensions
+        image: busybox
+        imagePullPolicy: IfNotPresent
+        command:
+          - sh
+        args:
+          - -c
+          - |
+            echo "Copying extensions..."
+            wget -O /deployments/keycloak-metrics-spi.jar https://github.com/aerogear/keycloak-metrics-spi/releases/download/1.0.1/keycloak-metrics-spi-1.0.1.jar
+        volumeMounts:
+          - name: deployments
+            mountPath: /deployments
+
+    extraVolumeMounts: |
+      - name: deployments
+        mountPath: /opt/jboss/keycloak/standalone/deployments
+
+    extraVolumes: |
+      - name: deployments
+        emptyDir: {}
     persistence:
       dbVendor: 'postgres'
     service:
       annotations:
         fabric8.io/expose: "true"
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
-
+  prometheus:
+    operator:
+      enabled: true
 postgres-ha:
   metrics:
     enabled: true
