@@ -2,7 +2,6 @@ keycloak:
   keycloak:
     persistence:
       dbVendor: 'postgres'
-      dbHost: jx-postgresql-ha-postgresql.{{ .Release.Namespace }}.svc.cluster.local
     service:
       annotations:
         fabric8.io/expose: "true"
