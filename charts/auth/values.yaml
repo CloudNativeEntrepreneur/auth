@@ -1,5 +1,25 @@
 keycloak:
   keycloak:
+    extraInitContainers: |
+      - name: theme-provider
+        image: gcr.io/cldntventr/keycloak-theme:0.0.1
+        imagePullPolicy: IfNotPresent
+        command:
+          - sh
+        args:
+          - -c
+          - |
+            echo "Copying theme..."
+            cp -R /logo/* /theme
+        volumeMounts:
+          - name: theme
+            mountPath: /theme
+    extraVolumeMounts: |
+      - name: theme
+        mountPath: /opt/jboss/keycloak/themes/logo
+    extraVolumes: |
+      - name: theme
+        emptyDir: {}
     persistence:
       dbVendor: 'postgres'
     service:
