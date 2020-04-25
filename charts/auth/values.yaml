@@ -2,7 +2,7 @@ keycloak:
   keycloak:
     extraInitContainers: |
       - name: theme-provider
-        image: gcr.io/cldntventr/keycloak-theme:0.0.1
+        image: gcr.io/cldntventr/keycloak-theme:0.0.14
         imagePullPolicy: IfNotPresent
         command:
           - sh
