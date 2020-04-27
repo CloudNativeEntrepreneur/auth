@@ -10,11 +10,16 @@ spec:
   directAccessGrantsEnabled: true
   standardFlowEnabled: true
   implicitFlowEnabled: false
+  redirectUris:
+    - 'https://*'
+  defaultRoles:
+    - db
   roles:
     - name: roles
       realmRoles:
         - demo-app
         - gdd
+        - member
   mapper:
     - name: audience
       protocolMapper: oidc-audience-mapper
