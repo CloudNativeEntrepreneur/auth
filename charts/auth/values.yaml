@@ -37,3 +37,6 @@ postgresAdminPassword:
 postgresAdminUsername:
 keycloakAdminPassword:
 keycloakAdminUsername:
+
+keycloak-controller:
+  namespaced: false
