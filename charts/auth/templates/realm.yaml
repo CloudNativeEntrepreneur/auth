@@ -1,10 +1,10 @@
 apiVersion: k8s.kiwigrid.com/v1beta1
 kind: KeycloakRealm
 metadata:
-  name: org
+  name: sso
 spec:
   keycloak: sso
-  realm: org
+  realm: sso
   roles:
   - admin
   - member
