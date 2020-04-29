@@ -1,5 +1,6 @@
 keycloak:
   keycloak:
+    extraArgs: -Dkeycloak.profile.feature.scripts=enabled
     extraInitContainers: |
       - name: theme-provider
         image: gcr.io/cldntventr/keycloak-theme:0.0.32
