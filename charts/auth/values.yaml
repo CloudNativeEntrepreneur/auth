@@ -36,19 +36,30 @@ keycloak:
         fabric8.io/expose: "true"
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
 postgres-ha:
+  persistence:
+    storageClass: ssd
+    size: 100Gi
   metrics:
     enabled: true
   networkPolicy:
     enabled: true
     allowExternal: false
-  # postgresql:
-  #   resources:
-  #     limits:
-  #       cpu: 250m
-  #       memory: 256Mi
-  #     requests:
-  #       cpu: 250m
-  #       memory: 256Mi
+  postgresql:
+    resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
+  pgpool:
+    resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 250m
+        memory: 256Mi
 
 postgresAdminPassword:
 postgresAdminUsername:
