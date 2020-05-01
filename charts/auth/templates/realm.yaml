@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 apiVersion: k8s.kiwigrid.com/v1beta1
 kind: KeycloakRealm
 metadata:
@@ -9,3 +10,4 @@ spec:
   - admin
   - member
   - service
+{{- end }}
