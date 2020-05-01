@@ -22,7 +22,14 @@ keycloak:
       - name: theme
         emptyDir: {}
     persistence:
-      dbVendor: 'postgres'
+      dbVendor: postgres
+    resources:
+      limits:
+        cpu: 100m
+        memory: 512Mi
+      requests:
+        cpu: 100m
+        memory: 512Mi
     service:
       annotations:
         fabric8.io/expose: "true"
