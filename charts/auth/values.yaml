@@ -37,16 +37,6 @@ keycloak:
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
         fabric8.io/ingress.name: "auth"
 
-keycloak-controller:
-  javaToolOptions: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"
-  resources:
-      limits:
-        cpu: 250m
-        memory: 256Mi
-      requests:
-        cpu: 50m
-        memory: 256Mi
-
 postgresql-ha:
   persistence:
     storageClass: ssd
@@ -80,3 +70,11 @@ keycloakAdminUsername:
 
 keycloak-controller:
   namespaced: false
+  javaToolOptions: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"
+  resources:
+      limits:
+        cpu: 250m
+        memory: 256Mi
+      requests:
+        cpu: 50m
+        memory: 256Mi
