@@ -75,3 +75,7 @@ keycloak-controller:
       requests:
         cpu: 50m
         memory: 256Mi
+
+realms:
+  dev: dev-staging
+  members: members-staging

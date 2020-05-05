@@ -2,10 +2,10 @@
 apiVersion: k8s.kiwigrid.com/v1beta1
 kind: KeycloakRealm
 metadata:
-  name: dev
+  name: {{ .Values.realms.members }}
 spec:
   keycloak: keycloak-{{ .Release.Namespace }}
-  realm: dev
+  realm: {{ .Values.realms.members }}
   roles:
   - admin
   - member
