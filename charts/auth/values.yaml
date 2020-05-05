@@ -38,8 +38,6 @@ keycloak:
         fabric8.io/ingress.name: "auth"
 
 postgresql-ha:
-  persistence:
-    storageClass: ssd
   metrics:
     enabled: true
   networkPolicy:
