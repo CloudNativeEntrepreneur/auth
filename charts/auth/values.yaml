@@ -40,7 +40,6 @@ keycloak:
 postgresql-ha:
   persistence:
     storageClass: ssd
-    size: 100Gi
   metrics:
     enabled: true
   networkPolicy:
