@@ -4,9 +4,10 @@ kind: KeycloakRealm
 metadata:
   name: dev
 spec:
-  keycloak: keycloak
+  keycloak: keycloak-{{ .Release.Namespace }}
   realm: dev
   roles:
   - admin
+  - member
   - service
 {{- end }}

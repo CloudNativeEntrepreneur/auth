@@ -4,7 +4,7 @@ kind: KeycloakRealm
 metadata:
   name: members
 spec:
-  keycloak: keycloak
+  keycloak: keycloak-{{ .Release.Namespace }}
   realm: members
   roles:
   - admin

@@ -2,7 +2,7 @@
 apiVersion: k8s.kiwigrid.com/v1beta1
 kind: Keycloak
 metadata:
-  name: keycloak
+  name: keycloak-{{ .Release.Namespace }}
 spec:
   url: http://jx-keycloak-http.{{ .Release.Namespace }}.svc.cluster.local/auth
   realm: master
