@@ -66,6 +66,7 @@ keycloakAdminPassword:
 keycloakAdminUsername:
 
 keycloak-controller:
+  enabled: true
   namespaced: false
   javaToolOptions: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"
   resources:

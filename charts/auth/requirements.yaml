@@ -5,6 +5,7 @@ dependencies:
 - name: keycloak-controller
   repository: https://kiwigrid.github.io
   version: 0.6.0
+  condition: keycloak-controller.enabled
 - name: postgresql-ha
   repository: https://charts.bitnami.com/bitnami
   version: 3.0.1
