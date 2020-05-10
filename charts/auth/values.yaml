@@ -2,6 +2,8 @@ enabled: true
 
 keycloak:
   keycloak:
+    image:
+      tag: 9.0.3 # keycloak controller does not support 10.x yet
     extraInitContainers: |
       - name: theme-provider
         image: gcr.io/cldntventr/keycloak-theme:0.0.32
