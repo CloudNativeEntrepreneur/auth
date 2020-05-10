@@ -1,11 +1,11 @@
 dependencies:
 - name: keycloak
   repository: https://codecentric.github.io/helm-charts
-  version: 7.5.0
+  version: 8.0.0
 - name: keycloak-controller
   repository: https://kiwigrid.github.io
   version: 0.6.0
   condition: keycloak-controller.enabled
 - name: postgresql-ha
   repository: https://charts.bitnami.com/bitnami
-  version: 3.0.1
+  version: 3.2.3
