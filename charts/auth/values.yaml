@@ -41,7 +41,3 @@ keycloak:
 
 keycloakAdminPassword:
 keycloakAdminUsername:
-
-realms:
-  dev: dev-staging
-  members: members-staging
