@@ -107,18 +107,6 @@ postgresAdminUsername:
 keycloakAdminPassword:
 keycloakAdminUsername:
 
-keycloak-controller:
-  enabled: true
-  namespaced: false
-  javaToolOptions: "-XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"
-  resources:
-      limits:
-        cpu: 250m
-        memory: 256Mi
-      requests:
-        cpu: 50m
-        memory: 256Mi
-
 realms:
   dev: dev-staging
   members: members-staging
