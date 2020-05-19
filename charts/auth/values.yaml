@@ -25,7 +25,7 @@ keycloak:
       - name: theme
         emptyDir: {}
     persistence:
-      dbVendor: postgres
+      deployPostgres: false
     resources:
       limits:
         cpu: 1
@@ -39,71 +39,6 @@ keycloak:
         fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
         fabric8.io/ingress.name: "auth"
 
-postgresql-ha:
-  metrics:
-    enabled: true
-  networkPolicy:
-    enabled: true
-    allowExternal: false
-  postgresql:
-    affinity: |
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-                - key: "app.kubernetes.io/component"
-                  operator: In
-                  values:
-                    - postgresql
-            topologyKey: kubernetes.io/hostname
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: "app.kubernetes.io/component"
-                    operator: In
-                    values:
-                      - postgresql
-              topologyKey: failure-domain.beta.kubernetes.io/zone
-    resources:
-      limits:
-        cpu: 250m
-        memory: 256Mi
-      requests:
-        cpu: 50m
-        memory: 256Mi
-  pgpool:
-    affinity: |
-      podAntiAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-                - key: "app.kubernetes.io/component"
-                  operator: In
-                  values:
-                    - pgpool
-            topologyKey: kubernetes.io/hostname
-        preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                  - key: "app.kubernetes.io/component"
-                    operator: In
-                    values:
-                      - pgpool
-              topologyKey: failure-domain.beta.kubernetes.io/zone
-    resources:
-      limits:
-        cpu: 250m
-        memory: 256Mi
-      requests:
-        cpu: 50m
-        memory: 256Mi
-
-postgresAdminPassword:
-postgresAdminUsername:
 keycloakAdminPassword:
 keycloakAdminUsername:
 

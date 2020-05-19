@@ -1,5 +1,5 @@
 # auth
 
-Installs keycloak, keycloak controller, postgres, and configures keycloak with realms and roles
+Installs keycloak configured with custom theme, wired up to use with keycloak-controller, and able to get secrets from jx/vault/helm integration
 
-To update CRDS for keycloak controller run `./get-crds.sh`
+keycloak-controller is required to be running in the cluster with `namespaced: false`
