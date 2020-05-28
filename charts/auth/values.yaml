@@ -26,13 +26,6 @@ keycloak:
         emptyDir: {}
     persistence:
       deployPostgres: false
-    resources:
-      limits:
-        cpu: 1
-        memory: 512Mi
-      requests:
-        cpu: 100m
-        memory: 512Mi
     service:
       annotations:
         fabric8.io/expose: "true"
